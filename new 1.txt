@@ -1,0 +1,34 @@
+
+	creating a app to track locations of kids for parents
+	
+	there will two accounts on the app. One for parents and one for kids.
+	it will require location access from both to determine the distance and address
+	Need to hire UI designer, back end developer and database designer
+	
+	need to know which competetors are already there (example: Find my Kid)
+	Find my Device provides on kids location, theny can not be contacted by parents.
+	this project will record their audio too on background.
+	
+	negotiate with random clients for more requirements
+	
+	Buy server and hosting...Godady and hostinger have different plans...choose minimum first
+	
+	Initial cost will be $10000 which will contain domain, hosting and developers
+	but cost will be more expensive as the project grows...
+	
+	give row idea of Money and recources needed to higher management and make request to have recources
+	
+	Select work schedule. it can be work from home..which will save time. work can be monitored and hours can be calulated using softwares. 
+	Freelancer.com have its own feature to do it.
+	
+	Launch the project and imporove the plan as it goes.
+	
+
+
+	
+	
+	
+	
+	
+	
+	
