@@ -6,6 +6,11 @@
     <title>HTML Form Elements</title>
     <style>
         *{box-sizing: border-box;font-family: verdana;}
+		body{
+			background: #4f5861;
+			margin: 0;
+			padding: 20px;
+		}
 		section {
 			max-width: 600px;
 			padding: 20px;
@@ -61,7 +66,59 @@
 			outline: none;
 			box-shadow: 0px 0px 2px 1px rgba(0,0,0,.7);
 		}
+		
+		.infobox{
+			position: relative;
+			background: #ffffff;
+			border: solid 1px #00b;
+			border-radius: 10px;
+			color: #9e9e9e;
+			max-width: 600px;
+			margin: 20px auto;
+		}
+		.info{
+			padding-left: 15px;
+			color: #00b;
+		}
+		.close{
+			padding: 5px;
+			position: absolute;
+			top: 0px;
+			right: 8px;
+		}
+		.close:hover{
+			cursor: pointer;
+			color: red;
+		}
     </style>
+	
+	<script type="text/javascript">
+		
+		// AUTO Calculate Total marks --
+	
+		document.addEventListener("DOMContentLoaded", function(){
+			markInputs = document.querySelectorAll("table input:not(#marksTotal)[type=number]");
+			calcTotal(markInputs);
+			
+			document.querySelector(".close").addEventListener("click", function(){
+				document.querySelector(".infobox").style.display = "none";
+			});
+			
+			markInputs.forEach(item=>{
+				item.addEventListener("change", function(){
+					calcTotal(markInputs);
+				});
+			})
+			
+			function calcTotal(markInputs){
+				totalMarks = 0;
+				markInputs.forEach(item=>{
+					totalMarks += parseInt(item.value)
+					document.querySelector("#marksTotal").value = totalMarks
+				})
+			}
+		});
+	</script>
 </head>
 <body>
     <main>
@@ -69,6 +126,9 @@
 			<header>
 				<h3>Student Entry Form</h3>
 			</header>
+			<div class="infobox">
+			<p class="info">Try Changin Marks <span class="close">x</span></p>
+		</div>
 			<form autocomplete="off">  
 				<label for="firstName">Enter student's first name</label>
 				<input type="text" id="firstName" class="column-1" name="firstName" placeholder="Enter first name" required>
@@ -101,35 +161,38 @@
 				<label for="image">Choose an image</label>
 				<input type="file" id="image" class="column-1" name="image" value="" accept="image/png, image/jpeg">
 				<label style="display:block;">Enter Your Marks</label>
+				
 				<table style="padding: 8px;">
-				<tr>
-				<td><label for="marksWeb">Web technology</label></td>
-				<td><input type="number" id="marksWeb" name="marksWeb" value="75" min="0" max="100" required></td>	
-				<td><label for="marksPython">Python</label></td>
-				<td><input type="number" id="marksPython" name="marksPython" value="75" min="0" max="100" required></td>	
-				</tr>
-				<tr>
-				<td><label for="marksProj">Project Management</label></td>
-				<td><input type="number" id="marksProj" name="marksProj" value="75" min="0" max="100" required></td>	
-				<td><label for="marksLogic">Programming Logic</label></td>
-				<td><input type="number" id="marksLogic" name="marksLogic" value="75" min="0" max="100" required></td>
-				</tr>
-				<tr>
-				<td><label for="marksDbms">DBMS</label></td>
-				<td><input type="number" id="marksDbms" name="marksDbms" value="75" min="0" max="100" required></td>	
-				<td><label for="marksTotal">Total</label></td>
-				<td><input type="number" id="marksTotal" name="marksTotal" value="0" min="0" max="500" required></td>
-				</tr>
+					<tr>
+						<td><label for="marksWeb">Web technology</label></td>
+						<td><input type="number" id="marksWeb" name="marksWeb" value="0" min="0" max="100" required></td>	
+						<td><label for="marksPython">Python</label></td>
+						<td><input type="number" id="marksPython" name="marksPython" value="0" min="0" max="100" required></td>	
+					</tr>
+					<tr>
+						<td><label for="marksProj">Project Management</label></td>
+						<td><input type="number" id="marksProj" name="marksProj" value="0" min="0" max="100" required></td>	
+						<td><label for="marksLogic">Programming Logic</label></td>
+						<td><input type="number" id="marksLogic" name="marksLogic" value="0" min="0" max="100" required></td>
+					</tr>
+					<tr>
+						<td><label for="marksDbms">DBMS</label></td>
+						<td><input type="number" id="marksDbms" name="marksDbms" value="0" min="0" max="100" required></td>	
+						<td><label for="marksTotal">Total</label></td>
+						<td><input type="number" id="marksTotal" name="marksTotal" value="0" min="0" max="500" required disabled></td>
+					</tr>
 				</table>	
 
 				<input type="submit" class="column-1" title="Submit">
+
 			</form>
+		
         </section>
     </main>
     
     <footer>
 
     </footer>
-
 </body>
+
 </html>
