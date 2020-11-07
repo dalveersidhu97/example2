@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Elements</title>
+    <style>
+        *{box-sizing: border-box;font-family: verdana;}
+		section {
+			max-width: 600px;
+			padding: 20px;
+			background: #cfc;
+			border-radius: 10px;
+			margin: auto;
+		}
+        form {
+            padding: 0;
+            margin: 10px auto;
+            max-width: 600px;
+        }
+        h3{text-align: center;padding: 5px;margin: 0;}
+        form label, input{margin: 0;display: inline-block;}
+		form label {
+			font-weight: bold;
+			font-size: .8em;
+			font-color: #666;
+			padding: 7px;
+		}
+        form input {
+            padding: 10px;
+			margin-bottom: 7px;
+			border: solid 1px #ccc;
+			border-radius: 5px;
+        }
+		
+		.colum-2{width: 50%;}
+		.column-1{width: 100%;}
+		.column-3{width: 33.333%;}
+		
+        input[type=submit]{background: #ccf}
+        input[type=file]{display: none;}
+		
+        label[for=image]{
+			padding:6px;
+			margin: 8px 0px;
+			background: #fcc;
+			border-radius: 3px;
+			font-weight: normal;
+			cursor: pointer;
+		}
+		input:focus {background: #f2f2f2;border: solid 1px blue;}
+    </style>
+</head>
+<body>
+    <main>
+		<section>
+			<header>
+				<h3>Student Entry Form</h3>
+			</header>
+			<form>  
+				<label for="firstName">Enter student's first name</label>
+				<input type="text" id="firstName" class="column-1" name="firstName" placeholder="Enter first name" required>
+				
+
+				<label for="lastName">Enter student's last name</label>
+				<input type="text" id="lastName" class="column-1" name="lastName" placeholder="Enter last name" required>
+				
+
+				<label for="street">Enter street address</label>
+				<input type="text" id="street" class="column-1" name="street" placeholder="Enter street address">
+				
+
+				<label for="city">Enter city</label>
+				<input type="text" id="city" class="column-1" name="city" placeholder="Enter city">
+				
+
+				<label for="email">Enter email</label>
+				<input type="email" id="email" class="column-1" name="email" placeholder="Enter your email id" required>
+				
+
+				<label for="phone">Enter phone number</label>
+				<input type="tel" id="phone" class="column-1" name="phone" placeholder="Enter your phone number" required>
+				
+
+				<label for="birthDate">Birth Date</label>
+				<input type="date" id="birthDate" class="column-1" name="birthDate" required>
+				
+
+				<label for="image">Choose an image</label>
+				<input type="file" id="image" class="column-1" name="image" value="" accept="image/png, image/jpeg">
+				<label style="display:block;">Enter Your Marks</label>
+				<table style="padding: 8px;">
+				<tr>
+				<td><label for="marksWeb">Web technology</label></td>
+				<td><input type="number" id="marksWeb" name="marksWeb" value="75" min="0" max="100" required></td>	
+				<td><label for="marksPython">Python</label></td>
+				<td><input type="number" id="marksPython" name="marksPython" value="75" min="0" max="100" required></td>	
+				</tr>
+				<tr>
+				<td><label for="marksProj">Project Management</label></td>
+				<td><input type="number" id="marksProj" name="marksProj" value="75" min="0" max="100" required></td>	
+				<td><label for="marksLogic">Programming Logic</label></td>
+				<td><input type="number" id="marksLogic" name="marksLogic" value="75" min="0" max="100" required></td>
+				</tr>
+				<tr>
+				<td><label for="marksDbms">DBMS</label></td>
+				<td><input type="number" id="marksDbms" name="marksDbms" value="75" min="0" max="100" required></td>	
+				<td><label for="marksTotal">Total</label></td>
+				<td><input type="number" id="marksTotal" name="marksTotal" value="0" min="0" max="500" required></td>
+				</tr>
+				</table>	
+
+				<input type="submit" class="column-1" title="Submit">
+			</form>
+        </section>
+    </main>
+    
+    <footer>
+
+    </footer>
+
+</body>
+</html>
