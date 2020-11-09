@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesiCart - Buying & Selling Made Easy </title>
+
+    <style>
+        *{box-sizing:border-box;margin: 0;padding: 0;}
+        body{margin: 0;padding: 0;font-family: Verdana, Geneva, Tahoma, sans-serif;}
+        #root{
+            width: 100%;
+        }
+        #top_header{
+            position: relative;
+            background-color: #0046be;
+            padding: 20px 0px 20px 60px;
+            margin: 0;
+        }
+        #top_header h1{
+            color: #ffffff;
+            padding: 10px;
+            padding-bottom: 5px;
+            margin: 0;
+            font-size: 2.5em;
+            color: #dcd500;
+            text-shadow: 0px 5px 10px rgba(0,0,0, .6);
+        }
+        #top_header p{
+            color: #dcd500;
+            padding-left: 10px;
+            margin: 0;
+            font-size: .90em;
+            text-shadow: 0 0 2px rgba(0,0,0,.6);
+        }
+        #top_header_nav{
+            position: absolute;
+            top: 10px;
+            right: 30px;
+        }
+        #top_header_nav ul, #top_nav ul {list-style-type: none;}
+        #top_header_nav ul li{display: inline-block;}
+        #top_header_nav ul li a{
+            display: inline-block;
+            text-decoration: none;
+            color: #bdd5ff;
+            font-size: .90em;
+            padding: 4px 7px;
+        }
+        #top_header_nav ul li a:hover{
+            color: #ffffff;
+        }
+
+        #top_nav{
+            /*background-color: #0046be;*/
+            box-shadow: 0 2px 2px -1px rgba(0,0,0, .5);
+            margin: 0px;
+            padding: 0px;
+            border-top: solid 1px #003da5;
+            overflow: auto;
+            padding-left: 20px;
+        }
+        #top_nav>ul>li{display: inline-block; float:left;}
+
+        .dropbtn, #top_nav> ul> li>a{
+            border:none;
+            display: block;
+            outline:none;
+            margin: 0;
+            /*background-color: #0046be;*/
+            color: #4e4e4e;
+            padding: 10px 13px;
+            font-weight: bold;
+            font-size: 1.0em;
+            text-decoration: none;
+        }
+        #top_nav>ul>li>a:visited{color: #4e4e4e;}
+        
+        #top_nav> ul>li>a:hover, .dropbtn{
+            color: #dcd500;
+            cursor: pointer;
+        }
+
+        .dropdown>.dropbtn::after{
+            content: ">";
+            margin-left: 3px;
+            display: inline-block;
+            transform: rotate(90deg);
+            font-family:"Consolas", monospace;
+        }
+        .dropdown:hover > .dropbtn:after{transform: rotate(270deg);}
+        .dropdown:hover > .dropbtn{color: #dcd500;}
+        .dropdown:hover > .dropdown_content {display: block;}
+        .dropdown:hover >::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            border-width: 5px;
+            margin-left: -5px;
+            border-style: solid;
+            border-color: transparent transparent #bdd5ff transparent;
+        }
+
+        .dropdown_content ul{display: inline-block;}
+        .dropdown_content li{display: block;}
+        .dropdown_content a, .dropdown_content .dropbtn{
+            display: block;
+            width: 100%;
+            text-align: left;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: .9em;
+            color:  #dcd500;
+        }
+        
+        /*-------------------------
+        .dropdown_content .dropbtn:hover::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            border-width: 5px;
+            margin-left: -5px;
+            border-style: solid;
+            border-color: transparent black transparent transparent;
+        }*/
+        .dropdown_content li a{border-radius: 5px;} 
+        .dropdown_content li a:visited{
+            color:  #dcd500;
+            text-decoration: none;
+        }
+        .dropdown_content li a:hover, .dropdown_content .dropbtn:hover{
+            color: white;
+            background-color: red;;
+        }
+        .dropdown_content{
+            display: none;
+            border-top: none;
+            position: absolute;
+            white-space: nowrap;
+            background-color: #0046be;
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0, .5);
+            border-radius: 5px;
+        }
+        .left{left: 100%;top: 50%;transform: translateY(-50%);}
+    </style>
+
+</head>
+<body>
+    <div id="root">
+
+        <header id="top_header">
+            <h1>DesiCart</h1>
+            <p>Buying & Selling Made Easy</p>
+            <nav id="top_header_nav">
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Cart</a></li>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Logout?</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <nav id="top_nav">
+            <ul>
+                <li class="dropdown">
+                    <a class="dropbtn">Catagories</a>
+                    <div class='dropdown_content'>
+                        <ul>
+                            <li><a href="#">Electronics</a></li>
+                            <li><a href="#">Home & Furniture</a></li>
+                            <li><a href="#">Laptops & Computers</a></li>
+                            <li><a href="#">Mobiles & Tablets</a></li>
+                            <li class="dropdown">
+                                <a class="dropbtn">Catagories</a>
+                                <div class='dropdown_content left'>
+                                    <ul>
+                                        <li><a href="#">Electronics</a></li>
+                                        <li><a href="#">Home & Furniture</a></li>
+                                        <li><a href="#">Laptops & Computers</a></li>
+                                        <li><a href="#">Mobiles & Tablets</a></li>
+                                        <li><a href="#">Clothing</a></li>
+                                        <li><a href="#">Gym Equipment</a></li>
+                                        <li><a href="#">Tvs & Monitors</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">Gym</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropbtn">Brands</a>
+                    <div class='dropdown_content'>
+                        <ul>
+                            <li><a href="#">Apple</a></li>
+                            <li><a href="#">Samsung</a></li>
+                            <li><a href="#">One Plus</a></li>
+                            <li><a href="#">Balck Berry</a></li>
+                            <li><a href="#">Oppo</a></li>
+                            <li><a href="#">Hawaei</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Offers & Deals</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+
+        </main>
+
+        <footer>
+
+        </footer>
+    </div>
+</body>
+</html>
